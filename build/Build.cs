@@ -34,7 +34,7 @@ class Build : NukeBuild
 
     [Solution]
     readonly Solution Solution;
-    Project Project => Solution.GetProject("EsunnyTap.Net");
+    Project Project => Solution.AllProjects.FirstOrDefault(o => o.Name == "EsunnyTap.Net");
 
     [Parameter]
     [Secret]
