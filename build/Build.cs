@@ -64,10 +64,11 @@ class Build : NukeBuild
                     if (IsServerBuild && GitHubActions.Instance.RefType.Equals("tag", StringComparison.OrdinalIgnoreCase))
                     {
                         var tag = GitHubActions.Instance.Ref;
+                        var version= tag.Substring(tag.LastIndexOf('/') + 1);
                         var outDir = Project.Directory / "bin" / Configuration;
                         outDir.CreateOrCleanDirectory();
                         DotNetTasks.DotNetPack(s =>
-                            s.SetProject(Project).SetConfiguration(Configuration).SetOutputDirectory(outDir).SetProperty("Version", tag)
+                            s.SetProject(Project).SetConfiguration(Configuration).SetOutputDirectory(outDir).SetProperty("Version", version)
                         );
 
                         var nupkg = outDir.GlobFiles("*.nupkg").First();
