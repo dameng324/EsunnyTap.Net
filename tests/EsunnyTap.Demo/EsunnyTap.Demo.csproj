@@ -9,6 +9,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EsunnyTap.Net" Version="0.0.2" />
+    <PackageReference Include="EsunnyTap.Net" Version="1.1.1" />
   </ItemGroup>
 </Project>

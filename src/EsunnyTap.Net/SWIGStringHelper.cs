@@ -15,7 +15,8 @@ public static class SwigStringHelper
 
     [DllImport("EsunnyTapApi", EntryPoint = "SWIGRegisterStringCallback_EsunnyTapApi")]
     static extern void SWIGRegisterStringCallback_EsunnyTapApi(SwigStringDelegate stringDelegate);
-
+    [DllImport("EsunnyTapApi", EntryPoint="SWIG_csharp_string_size")]
+    private static extern int SWIG_csharp_string_size(global::System.IntPtr str);
     // ReSharper disable once InconsistentNaming
 #if NETFRAMEWORK
     private static Encoding GB2312 { get; } = Encoding.GetEncoding("GB2312");
@@ -31,9 +32,7 @@ public static class SwigStringHelper
     {
         if (ptr == IntPtr.Zero)
             return string.Empty;
-
-        int count = 0;
-        while (Marshal.ReadByte(ptr, count++) != 0) { }
+        var count = SWIG_csharp_string_size(ptr);
 #if NET45
         var buffer = new byte[count];
         Marshal.Copy(ptr, buffer, 0, count);

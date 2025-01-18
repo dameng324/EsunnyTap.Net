@@ -21,6 +21,8 @@
 %apply double INOUT[]  { double [20] }
 %apply unsigned long long INOUT[]  { unsigned long long [20] }
 
+%copyctor;
+
 %include "include/TapAPICommDef.h"
 %include "include/TapAPIError.h"
 %include "include/TapQuoteAPIDataType.h"
