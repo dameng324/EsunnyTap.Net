@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{34CA88EC
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{52787EF6-DA7D-4E96-9CD7-D2CF592698E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52787EF6-DA7D-4E96-9CD7-D2CF592698E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52787EF6-DA7D-4E96-9CD7-D2CF592698E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BFCE514-5C6F-45C3-849A-DD2A21B3D20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BFCE514-5C6F-45C3-849A-DD2A21B3D20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BFCE514-5C6F-45C3-849A-DD2A21B3D20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
