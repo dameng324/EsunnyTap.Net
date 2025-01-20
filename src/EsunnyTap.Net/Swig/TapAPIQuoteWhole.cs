@@ -278,39 +278,47 @@ public class TapAPIQuoteWhole : global::System.IDisposable {
     } 
   }
 
-  public double[] QBidPrice {
+  public SWIGTYPE_p_double QBidPrice {
     set {
-      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidPrice_set(swigCPtr, value);
+      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidPrice_set(swigCPtr, SWIGTYPE_p_double.getCPtr(value));
     } 
     get {
-      return EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidPrice_get(swigCPtr);
+      global::System.IntPtr cPtr = EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidPrice_get(swigCPtr);
+      SWIGTYPE_p_double ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_double(cPtr, false);
+      return ret;
     } 
   }
 
-  public ulong[] QBidQty {
+  public SWIGTYPE_p_unsigned_long_long QBidQty {
     set {
-      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidQty_set(swigCPtr, value);
+      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidQty_set(swigCPtr, SWIGTYPE_p_unsigned_long_long.getCPtr(value));
     } 
     get {
-      return EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidQty_get(swigCPtr);
+      global::System.IntPtr cPtr = EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QBidQty_get(swigCPtr);
+      SWIGTYPE_p_unsigned_long_long ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_long_long(cPtr, false);
+      return ret;
     } 
   }
 
-  public double[] QAskPrice {
+  public SWIGTYPE_p_double QAskPrice {
     set {
-      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskPrice_set(swigCPtr, value);
+      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskPrice_set(swigCPtr, SWIGTYPE_p_double.getCPtr(value));
     } 
     get {
-      return EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskPrice_get(swigCPtr);
+      global::System.IntPtr cPtr = EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskPrice_get(swigCPtr);
+      SWIGTYPE_p_double ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_double(cPtr, false);
+      return ret;
     } 
   }
 
-  public ulong[] QAskQty {
+  public SWIGTYPE_p_unsigned_long_long QAskQty {
     set {
-      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskQty_set(swigCPtr, value);
+      EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskQty_set(swigCPtr, SWIGTYPE_p_unsigned_long_long.getCPtr(value));
     } 
     get {
-      return EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskQty_get(swigCPtr);
+      global::System.IntPtr cPtr = EsunnyTapApiPINVOKE.TapAPIQuoteWhole_QAskQty_get(swigCPtr);
+      SWIGTYPE_p_unsigned_long_long ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_long_long(cPtr, false);
+      return ret;
     } 
   }
 

@@ -5726,24 +5726,22 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_set___(void * jarg1, double* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_set___(void * jarg1, void * jarg2) {
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQPRICE *arg2 = (TAPIQPRICE *) (TAPIQPRICE *)0 ;
   
   arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = jarg2;
+  arg2 = (TAPIQPRICE *)jarg2; 
   {
     size_t ii;
     TAPIQPRICE *b = (TAPIQPRICE *) arg1->QBidPrice;
     for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQPRICE *) arg2 + ii);
   }
-  
-  
 }
 
 
-SWIGEXPORT double* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_get___(void * jarg1) {
-  double* jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_get___(void * jarg1) {
+  void * jresult ;
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQPRICE *result = 0 ;
   
@@ -5754,24 +5752,22 @@ SWIGEXPORT double* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_set___(void * jarg1, unsigned long long* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_set___(void * jarg1, void * jarg2) {
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQVOLUME *arg2 = (TAPIQVOLUME *) (TAPIQVOLUME *)0 ;
   
   arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = jarg2;
+  arg2 = (TAPIQVOLUME *)jarg2; 
   {
     size_t ii;
     TAPIQVOLUME *b = (TAPIQVOLUME *) arg1->QBidQty;
     for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQVOLUME *) arg2 + ii);
   }
-  
-  
 }
 
 
-SWIGEXPORT unsigned long long* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_get___(void * jarg1) {
-  unsigned long long* jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_get___(void * jarg1) {
+  void * jresult ;
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQVOLUME *result = 0 ;
   
@@ -5782,24 +5778,22 @@ SWIGEXPORT unsigned long long* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_set___(void * jarg1, double* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_set___(void * jarg1, void * jarg2) {
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQPRICE *arg2 = (TAPIQPRICE *) (TAPIQPRICE *)0 ;
   
   arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = jarg2;
+  arg2 = (TAPIQPRICE *)jarg2; 
   {
     size_t ii;
     TAPIQPRICE *b = (TAPIQPRICE *) arg1->QAskPrice;
     for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQPRICE *) arg2 + ii);
   }
-  
-  
 }
 
 
-SWIGEXPORT double* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_get___(void * jarg1) {
-  double* jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_get___(void * jarg1) {
+  void * jresult ;
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQPRICE *result = 0 ;
   
@@ -5810,24 +5804,22 @@ SWIGEXPORT double* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_g
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_set___(void * jarg1, unsigned long long* jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_set___(void * jarg1, void * jarg2) {
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQVOLUME *arg2 = (TAPIQVOLUME *) (TAPIQVOLUME *)0 ;
   
   arg1 = (TapAPIQuoteWhole *)jarg1; 
-  arg2 = jarg2;
+  arg2 = (TAPIQVOLUME *)jarg2; 
   {
     size_t ii;
     TAPIQVOLUME *b = (TAPIQVOLUME *) arg1->QAskQty;
     for (ii = 0; ii < (size_t)20; ii++) b[ii] = *((TAPIQVOLUME *) arg2 + ii);
   }
-  
-  
 }
 
 
-SWIGEXPORT unsigned long long* SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_get___(void * jarg1) {
-  unsigned long long* jresult ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_get___(void * jarg1) {
+  void * jresult ;
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
   TAPIQVOLUME *result = 0 ;
   

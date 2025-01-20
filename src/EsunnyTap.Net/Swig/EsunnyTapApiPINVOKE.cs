@@ -1453,28 +1453,28 @@ class EsunnyTapApiPINVOKE {
   public static extern ulong TapAPIQuoteWhole_QLastQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_set___")]
-  public static extern void TapAPIQuoteWhole_QBidPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.In, global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]double[] jarg2);
+  public static extern void TapAPIQuoteWhole_QBidPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidPrice_get___")]
-  public static extern double[] TapAPIQuoteWhole_QBidPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  public static extern global::System.IntPtr TapAPIQuoteWhole_QBidPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_set___")]
-  public static extern void TapAPIQuoteWhole_QBidQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.In, global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]ulong[] jarg2);
+  public static extern void TapAPIQuoteWhole_QBidQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QBidQty_get___")]
-  public static extern ulong[] TapAPIQuoteWhole_QBidQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  public static extern global::System.IntPtr TapAPIQuoteWhole_QBidQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_set___")]
-  public static extern void TapAPIQuoteWhole_QAskPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.In, global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]double[] jarg2);
+  public static extern void TapAPIQuoteWhole_QAskPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskPrice_get___")]
-  public static extern double[] TapAPIQuoteWhole_QAskPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  public static extern global::System.IntPtr TapAPIQuoteWhole_QAskPrice_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_set___")]
-  public static extern void TapAPIQuoteWhole_QAskQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, [global::System.Runtime.InteropServices.In, global::System.Runtime.InteropServices.Out, global::System.Runtime.InteropServices.MarshalAs(global::System.Runtime.InteropServices.UnmanagedType.LPArray)]ulong[] jarg2);
+  public static extern void TapAPIQuoteWhole_QAskQty_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QAskQty_get___")]
-  public static extern ulong[] TapAPIQuoteWhole_QAskQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  public static extern global::System.IntPtr TapAPIQuoteWhole_QAskQty_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("EsunnyTapApi", EntryPoint="CSharp_EsunnyTapfNet_TapAPIQuoteWhole_QImpliedBidPrice_set___")]
   public static extern void TapAPIQuoteWhole_QImpliedBidPrice_set(global::System.Runtime.InteropServices.HandleRef jarg1, double jarg2);

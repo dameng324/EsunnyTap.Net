@@ -4,11 +4,12 @@
     <OutputType>Exe</OutputType>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EsunnyTap.Net" Version="1.1.1" />
+    <PackageReference Include="EsunnyTap.Net" Version="1.1.2-test" />
+    <PackageReference Include="System.Reactive" Version="6.0.1" />
+    <PackageReference Include="TUnit" Version="0.6.151" />    
   </ItemGroup>
 </Project>

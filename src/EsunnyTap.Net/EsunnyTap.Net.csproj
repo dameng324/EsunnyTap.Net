@@ -6,8 +6,9 @@
         <RepositoryType>git</RepositoryType>
         <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
-        <Version>1.1.2</Version>
+        <Version>1.1.2-test</Version>
         <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
         <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
         <PackageProjectUrl>https://github.com/dameng324/EsunnyTap.Net</PackageProjectUrl>

@@ -17,10 +17,6 @@
 %apply unsigned int *INOUT { unsigned int *sessionID };
 %apply int *INOUT { int &iResult };
 
-%include "arrays_csharp.i"
-%apply double INOUT[]  { double [20] }
-%apply unsigned long long INOUT[]  { unsigned long long [20] }
-
 %copyctor;
 
 %include "include/TapAPICommDef.h"
