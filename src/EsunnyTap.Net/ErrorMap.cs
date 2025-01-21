@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CoupleTrader.Api.Trade.EsunnyTap.Interop;
+namespace EsunnyTap.Net;
 
 public static class ErrorCodeMap
 {
