@@ -9,8 +9,8 @@ namespace EsunnyTap.Demo;
 
 public class QuoteTests
 {
-    [Test]
-    [Explicit]
+    // [Test]
+    // [Explicit]
     public async Task Test()
     {
         Console.WriteLine($"TapQuoteApiVersion:{EsunnyTapApi.GetTapQuoteAPIVersion()}");
@@ -22,6 +22,7 @@ public class QuoteTests
             Console.WriteLine($"CreateTapQuoteAPI failed ret:{ret}");
             return;
         }
+        Console.WriteLine($"TapQuoteAPI:{api}");
 
         var quoteSpi = new QuoteImpl();
         ret = api.SetAPINotify(quoteSpi);
@@ -30,12 +31,16 @@ public class QuoteTests
             Console.WriteLine($"SetAPINotify failed ret:{ret}");
             return;
         }
+        Console.WriteLine($"SetAPINotify success");
+        
         ret = api.SetHostAddress("61.163.243.173", 7171);
         if (ret != 0)
         {
             Console.WriteLine($"SetHostAddress failed ret:{ret}");
             return;
         }
+        Console.WriteLine($"SetHostAddress success");
+        
         ret = api.Login(
             new TapAPIQuoteLoginAuth()
             {
@@ -45,12 +50,14 @@ public class QuoteTests
                 ISModifyPassword = EsunnyTapApi.APIYNFLAG_NO,
             }
         );
+        Console.WriteLine($"Login ret:{ret}");
         if (ret != 0)
         {
             Console.WriteLine($"Login failed ret:{ret}");
             return;
         }
         await quoteSpi.OnAPIReadyEvent.Take(1).ToTask();
+        Console.WriteLine($"Login success");
         uint sessionId = 0;
         api.SubscribeQuote(
             ref sessionId,

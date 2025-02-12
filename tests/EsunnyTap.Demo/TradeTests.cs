@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
+using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using EsunnyTap.Net;
 
@@ -6,8 +9,7 @@ namespace EsunnyTap.Demo;
 
 public class TradeTests
 {
-    [Test]
-    [Explicit]
+    //[Test]
     public async Task Test()
     {
         Console.WriteLine($"TapTradeApiVersion:{EsunnyTapApi.GetTapTradeAPIVersion()}");
@@ -50,7 +52,9 @@ public class TradeTests
             Console.WriteLine($"Login failed ret:{ret}");
             return;
         }
-        await Task.Delay(100000);
+
+        await tradeSpi.OnApiReadySubject.Take(1).ToTask();
+        Console.WriteLine($"Login success");
     }
 
     public class TradeImpl : EsunnyTap.Net.ITapTradeAPINotify
@@ -69,10 +73,11 @@ public class TradeTests
         {
             Console.WriteLine($"OnDisconnect reasonCode:{reasonCode}");
         }
-
+public Subject<int> OnApiReadySubject = new();
         public override void OnAPIReady()
         {
             Console.WriteLine("OnAPIReady");
+            OnApiReadySubject.OnNext(0);
         }
     }
 }

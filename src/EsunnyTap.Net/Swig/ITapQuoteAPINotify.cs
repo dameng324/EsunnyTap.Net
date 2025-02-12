@@ -58,35 +58,35 @@ public class ITapQuoteAPINotify : global::System.IDisposable {
   }
 
   public virtual void OnRspLogin(int errorCode, TapAPIQuotLoginRspInfo info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPIQuotLoginRspInfo.getCPtr(info));
+    
   }
 
   public virtual void OnAPIReady() {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnAPIReady(swigCPtr);
+    
   }
 
   public virtual void OnDisconnect(int reasonCode) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnDisconnect(swigCPtr, reasonCode);
+    
   }
 
   public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPIQuoteCommodityInfo info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteCommodityInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPIQuoteContractInfo info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteContractInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIQuoteWhole info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRspSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIQuoteWhole.getCPtr(info));
+    
   }
 
   public virtual void OnRspUnSubscribeQuote(uint sessionID, int errorCode, char isLast, TapAPIContract info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRspUnSubscribeQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIContract.getCPtr(info));
+    
   }
 
   public virtual void OnRtnQuote(TapAPIQuoteWhole info) {
-    EsunnyTapApiPINVOKE.ITapQuoteAPINotify_OnRtnQuote(swigCPtr, TapAPIQuoteWhole.getCPtr(info));
+    
   }
 
   public ITapQuoteAPINotify() : this(EsunnyTapApiPINVOKE.new_ITapQuoteAPINotify__SWIG_0(), true) {
@@ -99,57 +99,15 @@ public class ITapQuoteAPINotify : global::System.IDisposable {
   }
 
   private void SwigDirectorConnect() {
-    if (SwigDerivedClassHasMethod("OnRspLogin", swigMethodTypes0))
-      swigDelegate0 = new SwigDelegateITapQuoteAPINotify_0(SwigDirectorMethodOnRspLogin);
-    if (SwigDerivedClassHasMethod("OnAPIReady", swigMethodTypes1))
-      swigDelegate1 = new SwigDelegateITapQuoteAPINotify_1(SwigDirectorMethodOnAPIReady);
-    if (SwigDerivedClassHasMethod("OnDisconnect", swigMethodTypes2))
-      swigDelegate2 = new SwigDelegateITapQuoteAPINotify_2(SwigDirectorMethodOnDisconnect);
-    if (SwigDerivedClassHasMethod("OnRspQryCommodity", swigMethodTypes3))
-      swigDelegate3 = new SwigDelegateITapQuoteAPINotify_3(SwigDirectorMethodOnRspQryCommodity);
-    if (SwigDerivedClassHasMethod("OnRspQryContract", swigMethodTypes4))
-      swigDelegate4 = new SwigDelegateITapQuoteAPINotify_4(SwigDirectorMethodOnRspQryContract);
-    if (SwigDerivedClassHasMethod("OnRspSubscribeQuote", swigMethodTypes5))
-      swigDelegate5 = new SwigDelegateITapQuoteAPINotify_5(SwigDirectorMethodOnRspSubscribeQuote);
-    if (SwigDerivedClassHasMethod("OnRspUnSubscribeQuote", swigMethodTypes6))
-      swigDelegate6 = new SwigDelegateITapQuoteAPINotify_6(SwigDirectorMethodOnRspUnSubscribeQuote);
-    if (SwigDerivedClassHasMethod("OnRtnQuote", swigMethodTypes7))
-      swigDelegate7 = new SwigDelegateITapQuoteAPINotify_7(SwigDirectorMethodOnRtnQuote);
+    swigDelegate0 = (SwigDirectorMethodOnRspLogin);
+    swigDelegate1 = (SwigDirectorMethodOnAPIReady);
+    swigDelegate2 = (SwigDirectorMethodOnDisconnect);
+    swigDelegate3 = (SwigDirectorMethodOnRspQryCommodity);
+    swigDelegate4 = (SwigDirectorMethodOnRspQryContract);
+    swigDelegate5 = (SwigDirectorMethodOnRspSubscribeQuote);
+    swigDelegate6 = (SwigDirectorMethodOnRspUnSubscribeQuote);
+    swigDelegate7 = (SwigDirectorMethodOnRtnQuote);
     EsunnyTapApiPINVOKE.ITapQuoteAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7);
-  }
-
-  private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
-    global::System.Reflection.MethodInfo[] methodInfos = this.GetType().GetMethods(
-        global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.NonPublic | global::System.Reflection.BindingFlags.Instance);
-    foreach (global::System.Reflection.MethodInfo methodInfo in methodInfos) {
-      if (methodInfo.DeclaringType == null)
-        continue;
-
-      if (methodInfo.Name != methodName)
-        continue;
-
-      var parameters = methodInfo.GetParameters();
-      if (parameters.Length != methodTypes.Length)
-        continue;
-
-      bool parametersMatch = true;
-      for (var i = 0; i < parameters.Length; i++) {
-        if (parameters[i].ParameterType != methodTypes[i]) {
-          parametersMatch = false;
-          break;
-        }
-      }
-
-      if (!parametersMatch)
-        continue;
-
-      if (methodInfo.IsVirtual && (methodInfo.DeclaringType.IsSubclassOf(typeof(ITapQuoteAPINotify))) &&
-        methodInfo.DeclaringType != methodInfo.GetBaseDefinition().DeclaringType) {
-        return true;
-      }
-    }
-
-    return false;
   }
 
   private void SwigDirectorMethodOnRspLogin(int errorCode, global::System.IntPtr info) {

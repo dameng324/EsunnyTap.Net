@@ -7,8 +7,9 @@
         <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
-        <Version>1.1.2-test</Version>
+        <IsTrimmable>true</IsTrimmable>
+        <IsAotCompatible >true</IsAotCompatible>
+        <Version>1.1.2-test9</Version>
         <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
         <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
         <PackageProjectUrl>https://github.com/dameng324/EsunnyTap.Net</PackageProjectUrl>
@@ -17,14 +18,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="runtimes\**" />
-        <Content Remove="runtimes\**"/>
-        <EmbeddedResource Remove="runtimes\**" />
-        <None Include="runtimes\**\*.*">
+        <Content Include="runtimes\**\*.*">
             <Pack>true</Pack>
             <PackagePath>runtimes\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
-        </None>
-        <None Remove="runtimes\**\*.lib"/>
+        </Content>
+        <Content Remove="runtimes\**\*.lib"/>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Condition="$(TargetFramework)=='netstandard2.0'" Include="System.Text.Encoding.CodePages" Version="9.0.0"/>

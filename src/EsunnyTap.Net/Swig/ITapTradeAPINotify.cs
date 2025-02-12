@@ -58,139 +58,139 @@ public class ITapTradeAPINotify : global::System.IDisposable {
   }
 
   public virtual void OnConnect() {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnConnect(swigCPtr);
+    
   }
 
   public virtual void OnRspLogin(int errorCode, TapAPITradeLoginRspInfo loginRspInfo) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspLogin(swigCPtr, errorCode, TapAPITradeLoginRspInfo.getCPtr(loginRspInfo));
+    
   }
 
   public virtual void OnAPIReady() {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnAPIReady(swigCPtr);
+    
   }
 
   public virtual void OnDisconnect(int reasonCode) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnDisconnect(swigCPtr, reasonCode);
+    
   }
 
   public virtual void OnRspChangePassword(uint sessionID, int errorCode) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspChangePassword(swigCPtr, sessionID, errorCode);
+    
   }
 
   public virtual void OnRspSetReservedInfo(uint sessionID, int errorCode, string info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspSetReservedInfo(swigCPtr, sessionID, errorCode, info);
+    
   }
 
   public virtual void OnRspQryAccount(uint sessionID, uint errorCode, char isLast, TapAPIAccountInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryAccount(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryFund(uint sessionID, int errorCode, char isLast, TapAPIFundData info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryFund(swigCPtr, sessionID, errorCode, isLast, TapAPIFundData.getCPtr(info));
+    
   }
 
   public virtual void OnRtnFund(TapAPIFundData info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnFund(swigCPtr, TapAPIFundData.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryExchange(uint sessionID, int errorCode, char isLast, TapAPIExchangeInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryExchange(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryCommodity(uint sessionID, int errorCode, char isLast, TapAPICommodityInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryCommodity(swigCPtr, sessionID, errorCode, isLast, TapAPICommodityInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryContract(uint sessionID, int errorCode, char isLast, TapAPITradeContractInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryContract(swigCPtr, sessionID, errorCode, isLast, TapAPITradeContractInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnContract(TapAPITradeContractInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnContract(swigCPtr, TapAPITradeContractInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnOrder(TapAPIOrderInfoNotice info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnOrder(swigCPtr, TapAPIOrderInfoNotice.getCPtr(info));
+    
   }
 
   public virtual void OnRspOrderAction(uint sessionID, uint errorCode, TapAPIOrderActionRsp info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspOrderAction(swigCPtr, sessionID, errorCode, TapAPIOrderActionRsp.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryOrder(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryOrder(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryOrderProcess(uint sessionID, int errorCode, char isLast, TapAPIOrderInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryOrderProcess(swigCPtr, sessionID, errorCode, isLast, TapAPIOrderInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryFill(uint sessionID, int errorCode, char isLast, TapAPIFillInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryFill(swigCPtr, sessionID, errorCode, isLast, TapAPIFillInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnFill(TapAPIFillInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnFill(swigCPtr, TapAPIFillInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryPosition(uint sessionID, int errorCode, char isLast, TapAPIPositionInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryPosition(swigCPtr, sessionID, errorCode, isLast, TapAPIPositionInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnPosition(TapAPIPositionInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnPosition(swigCPtr, TapAPIPositionInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryClose(uint sessionID, int errorCode, char isLast, TapAPICloseInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryClose(swigCPtr, sessionID, errorCode, isLast, TapAPICloseInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnClose(TapAPICloseInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnClose(swigCPtr, TapAPICloseInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnPositionProfit(TapAPIPositionProfitNotice info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnPositionProfit(swigCPtr, TapAPIPositionProfitNotice.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryDeepQuote(uint sessionID, int errorCode, char isLast, TapAPIDeepQuoteQryRsp info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryDeepQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIDeepQuoteQryRsp.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryExchangeStateInfo(uint sessionID, int errorCode, char isLast, TapAPIExchangeStateInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryExchangeStateInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeStateInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnExchangeStateInfo(TapAPIExchangeStateInfoNotice info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnExchangeStateInfo(swigCPtr, TapAPIExchangeStateInfoNotice.getCPtr(info));
+    
   }
 
   public virtual void OnRtnReqQuoteNotice(TapAPIReqQuoteNotice info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnReqQuoteNotice(swigCPtr, TapAPIReqQuoteNotice.getCPtr(info));
+    
   }
 
   public virtual void OnRspUpperChannelInfo(uint sessionID, int errorCode, char isLast, TapAPIUpperChannelInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspUpperChannelInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIUpperChannelInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspAccountRentInfo(uint sessionID, int errorCode, char isLast, TapAPIAccountRentInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspAccountRentInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountRentInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspSubmitUserLoginInfo(uint sessionID, int errorCode, char isLast, TapAPISubmitUserLoginRspInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspSubmitUserLoginInfo(swigCPtr, sessionID, errorCode, isLast, TapAPISubmitUserLoginRspInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryBill(uint sessionID, int errorCode, char isLast, TapAPIBillQryRsp info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryBill(swigCPtr, sessionID, errorCode, isLast, TapAPIBillQryRsp.getCPtr(info));
+    
   }
 
   public virtual void OnRspQryAccountStorage(uint sessionID, int errorCode, char isLast, TapAPIAccountStorageInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRspQryAccountStorage(swigCPtr, sessionID, errorCode, isLast, TapAPIAccountStorageInfo.getCPtr(info));
+    
   }
 
   public virtual void OnRtnAccountStorage(TapAPIAccountStorageInfo info) {
-    EsunnyTapApiPINVOKE.ITapTradeAPINotify_OnRtnAccountStorage(swigCPtr, TapAPIAccountStorageInfo.getCPtr(info));
+    
   }
 
   public ITapTradeAPINotify() : this(EsunnyTapApiPINVOKE.new_ITapTradeAPINotify__SWIG_0(), true) {
@@ -203,109 +203,75 @@ public class ITapTradeAPINotify : global::System.IDisposable {
   }
 
   private void SwigDirectorConnect() {
-    if (SwigDerivedClassHasMethod("OnConnect", swigMethodTypes0))
+    
       swigDelegate0 = new SwigDelegateITapTradeAPINotify_0(SwigDirectorMethodOnConnect);
-    if (SwigDerivedClassHasMethod("OnRspLogin", swigMethodTypes1))
+    
       swigDelegate1 = new SwigDelegateITapTradeAPINotify_1(SwigDirectorMethodOnRspLogin);
-    if (SwigDerivedClassHasMethod("OnAPIReady", swigMethodTypes2))
+    
       swigDelegate2 = new SwigDelegateITapTradeAPINotify_2(SwigDirectorMethodOnAPIReady);
-    if (SwigDerivedClassHasMethod("OnDisconnect", swigMethodTypes3))
+    
       swigDelegate3 = new SwigDelegateITapTradeAPINotify_3(SwigDirectorMethodOnDisconnect);
-    if (SwigDerivedClassHasMethod("OnRspChangePassword", swigMethodTypes4))
+    
       swigDelegate4 = new SwigDelegateITapTradeAPINotify_4(SwigDirectorMethodOnRspChangePassword);
-    if (SwigDerivedClassHasMethod("OnRspSetReservedInfo", swigMethodTypes5))
+    
       swigDelegate5 = new SwigDelegateITapTradeAPINotify_5(SwigDirectorMethodOnRspSetReservedInfo);
-    if (SwigDerivedClassHasMethod("OnRspQryAccount", swigMethodTypes6))
+    
       swigDelegate6 = new SwigDelegateITapTradeAPINotify_6(SwigDirectorMethodOnRspQryAccount);
-    if (SwigDerivedClassHasMethod("OnRspQryFund", swigMethodTypes7))
+    
       swigDelegate7 = new SwigDelegateITapTradeAPINotify_7(SwigDirectorMethodOnRspQryFund);
-    if (SwigDerivedClassHasMethod("OnRtnFund", swigMethodTypes8))
+    
       swigDelegate8 = new SwigDelegateITapTradeAPINotify_8(SwigDirectorMethodOnRtnFund);
-    if (SwigDerivedClassHasMethod("OnRspQryExchange", swigMethodTypes9))
+    
       swigDelegate9 = new SwigDelegateITapTradeAPINotify_9(SwigDirectorMethodOnRspQryExchange);
-    if (SwigDerivedClassHasMethod("OnRspQryCommodity", swigMethodTypes10))
+    
       swigDelegate10 = new SwigDelegateITapTradeAPINotify_10(SwigDirectorMethodOnRspQryCommodity);
-    if (SwigDerivedClassHasMethod("OnRspQryContract", swigMethodTypes11))
+    
       swigDelegate11 = new SwigDelegateITapTradeAPINotify_11(SwigDirectorMethodOnRspQryContract);
-    if (SwigDerivedClassHasMethod("OnRtnContract", swigMethodTypes12))
+    
       swigDelegate12 = new SwigDelegateITapTradeAPINotify_12(SwigDirectorMethodOnRtnContract);
-    if (SwigDerivedClassHasMethod("OnRtnOrder", swigMethodTypes13))
+    
       swigDelegate13 = new SwigDelegateITapTradeAPINotify_13(SwigDirectorMethodOnRtnOrder);
-    if (SwigDerivedClassHasMethod("OnRspOrderAction", swigMethodTypes14))
+    
       swigDelegate14 = new SwigDelegateITapTradeAPINotify_14(SwigDirectorMethodOnRspOrderAction);
-    if (SwigDerivedClassHasMethod("OnRspQryOrder", swigMethodTypes15))
+    
       swigDelegate15 = new SwigDelegateITapTradeAPINotify_15(SwigDirectorMethodOnRspQryOrder);
-    if (SwigDerivedClassHasMethod("OnRspQryOrderProcess", swigMethodTypes16))
+    
       swigDelegate16 = new SwigDelegateITapTradeAPINotify_16(SwigDirectorMethodOnRspQryOrderProcess);
-    if (SwigDerivedClassHasMethod("OnRspQryFill", swigMethodTypes17))
+    
       swigDelegate17 = new SwigDelegateITapTradeAPINotify_17(SwigDirectorMethodOnRspQryFill);
-    if (SwigDerivedClassHasMethod("OnRtnFill", swigMethodTypes18))
+    
       swigDelegate18 = new SwigDelegateITapTradeAPINotify_18(SwigDirectorMethodOnRtnFill);
-    if (SwigDerivedClassHasMethod("OnRspQryPosition", swigMethodTypes19))
+    
       swigDelegate19 = new SwigDelegateITapTradeAPINotify_19(SwigDirectorMethodOnRspQryPosition);
-    if (SwigDerivedClassHasMethod("OnRtnPosition", swigMethodTypes20))
+    
       swigDelegate20 = new SwigDelegateITapTradeAPINotify_20(SwigDirectorMethodOnRtnPosition);
-    if (SwigDerivedClassHasMethod("OnRspQryClose", swigMethodTypes21))
+    
       swigDelegate21 = new SwigDelegateITapTradeAPINotify_21(SwigDirectorMethodOnRspQryClose);
-    if (SwigDerivedClassHasMethod("OnRtnClose", swigMethodTypes22))
+    
       swigDelegate22 = new SwigDelegateITapTradeAPINotify_22(SwigDirectorMethodOnRtnClose);
-    if (SwigDerivedClassHasMethod("OnRtnPositionProfit", swigMethodTypes23))
+    
       swigDelegate23 = new SwigDelegateITapTradeAPINotify_23(SwigDirectorMethodOnRtnPositionProfit);
-    if (SwigDerivedClassHasMethod("OnRspQryDeepQuote", swigMethodTypes24))
+    
       swigDelegate24 = new SwigDelegateITapTradeAPINotify_24(SwigDirectorMethodOnRspQryDeepQuote);
-    if (SwigDerivedClassHasMethod("OnRspQryExchangeStateInfo", swigMethodTypes25))
+    
       swigDelegate25 = new SwigDelegateITapTradeAPINotify_25(SwigDirectorMethodOnRspQryExchangeStateInfo);
-    if (SwigDerivedClassHasMethod("OnRtnExchangeStateInfo", swigMethodTypes26))
+    
       swigDelegate26 = new SwigDelegateITapTradeAPINotify_26(SwigDirectorMethodOnRtnExchangeStateInfo);
-    if (SwigDerivedClassHasMethod("OnRtnReqQuoteNotice", swigMethodTypes27))
+    
       swigDelegate27 = new SwigDelegateITapTradeAPINotify_27(SwigDirectorMethodOnRtnReqQuoteNotice);
-    if (SwigDerivedClassHasMethod("OnRspUpperChannelInfo", swigMethodTypes28))
+    
       swigDelegate28 = new SwigDelegateITapTradeAPINotify_28(SwigDirectorMethodOnRspUpperChannelInfo);
-    if (SwigDerivedClassHasMethod("OnRspAccountRentInfo", swigMethodTypes29))
+    
       swigDelegate29 = new SwigDelegateITapTradeAPINotify_29(SwigDirectorMethodOnRspAccountRentInfo);
-    if (SwigDerivedClassHasMethod("OnRspSubmitUserLoginInfo", swigMethodTypes30))
+    
       swigDelegate30 = new SwigDelegateITapTradeAPINotify_30(SwigDirectorMethodOnRspSubmitUserLoginInfo);
-    if (SwigDerivedClassHasMethod("OnRspQryBill", swigMethodTypes31))
+    
       swigDelegate31 = new SwigDelegateITapTradeAPINotify_31(SwigDirectorMethodOnRspQryBill);
-    if (SwigDerivedClassHasMethod("OnRspQryAccountStorage", swigMethodTypes32))
+    
       swigDelegate32 = new SwigDelegateITapTradeAPINotify_32(SwigDirectorMethodOnRspQryAccountStorage);
-    if (SwigDerivedClassHasMethod("OnRtnAccountStorage", swigMethodTypes33))
+    
       swigDelegate33 = new SwigDelegateITapTradeAPINotify_33(SwigDirectorMethodOnRtnAccountStorage);
     EsunnyTapApiPINVOKE.ITapTradeAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33);
-  }
-
-  private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
-    global::System.Reflection.MethodInfo[] methodInfos = this.GetType().GetMethods(
-        global::System.Reflection.BindingFlags.Public | global::System.Reflection.BindingFlags.NonPublic | global::System.Reflection.BindingFlags.Instance);
-    foreach (global::System.Reflection.MethodInfo methodInfo in methodInfos) {
-      if (methodInfo.DeclaringType == null)
-        continue;
-
-      if (methodInfo.Name != methodName)
-        continue;
-
-      var parameters = methodInfo.GetParameters();
-      if (parameters.Length != methodTypes.Length)
-        continue;
-
-      bool parametersMatch = true;
-      for (var i = 0; i < parameters.Length; i++) {
-        if (parameters[i].ParameterType != methodTypes[i]) {
-          parametersMatch = false;
-          break;
-        }
-      }
-
-      if (!parametersMatch)
-        continue;
-
-      if (methodInfo.IsVirtual && (methodInfo.DeclaringType.IsSubclassOf(typeof(ITapTradeAPINotify))) &&
-        methodInfo.DeclaringType != methodInfo.GetBaseDefinition().DeclaringType) {
-        return true;
-      }
-    }
-
-    return false;
   }
 
   private void SwigDirectorMethodOnConnect() {
