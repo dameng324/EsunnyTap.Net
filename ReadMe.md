@@ -2,28 +2,56 @@
 
 [![NuGet](https://img.shields.io/nuget/v/EsunnyTap.Net.svg)](https://www.nuget.org/packages/EsunnyTap.Net)
 
-EsunnyTap.Net is a .NET library for the EsunnyTap Futures API. It is a wrapper of the EsunnyTap C++ API using swig.
+EsunnyTap.Net是易盛9.0内盘柜台接口的C#封装。它使用Swig技术将易盛的C++接口封装成C#接口。它支持易盛的行情和交易接口。
 
-Please read FAQ before using this library.[FAQ](#faq)
+## 主要功能
 
-It only works on Windows now, It's possible to work on Linux, but I haven't finished it yet.
+- 支持行情和交易接口
+- 支持.Net Framework 4.5和.Net Standard 2.0，以及.NET6和.NET8
+- 编译时会自动将依赖的dll拷贝到输出目录
+- 支持Native AOT编译，避免代码被反编译
+- 同时支持Windows和Linux。Mac/IOS/Android由于易盛官方并未发布对应的native dll，所以无法支持
 
-## Features
+## 常见问题
 
-- Support both EsunnyTap Trade and EsunnyTap Market API
-- Support .Net framework 4.5 and .Net Standard 2.0 and Modern .Net6 and .Net8
-- Auto copy the native dlls to the output directory
-- Native AOT support
-- Solved the GB2312 encoding problem
+### API版本号是多少?
 
+TapQuoteApiVersion:Version TapQuoteAPI V9.3.1.4, Date 2018.12.25
+TapTradeApiVersion:Version TapTradeAPI V9.0.3.16, Date 2020.08.08
 
-## Installation
+### Dll文件没有自动拷贝到输出目录
+
+默认情况下编译后会拷贝到runtimes/目录下以适应不同的操作系统。如果你的程序只在特定的操作系统下运行，可以在项目csproj配置文件中配置特定的RuntimeIdentifier。
+- Windows: `<RuntimeIdentifier>win-x64</RuntimeIdentifier>`
+- Linux: `<RuntimeIdentifier>linux-x64</RuntimeIdentifier>`
+- 
+### 存在中文乱码问题？
+
+在调用所有接口之前尝试使用此接口
+
+```csharp
+SwigStringHelper.Register();
+```
+
+### 其他问题？
+
+请提交github issue
+
+## 安装
+
+使用 dotnet 命令安装
 
 ```bash
 dotnet add package EsunnyTap.Net
 ```
 
-## Usage
+PackageReference
+
+```xml
+<PackageReference Include="EsunnyTap.Net" Version="1.1.7" />
+```
+
+## 用法
 
 ```csharp
 using System;
@@ -101,39 +129,11 @@ public class TradeImpl : EsunnyTap.Net.ITapTradeAPINotify
 
 ```
 
-## Build from source
+## 打赏
 
-### Prerequisites
+如果这个项目有帮助到你，请随意打赏
 
-- dotnet sdk 8.0 or later
-- swig 4.3.0 or later, use `scoop install swig` to install swig on windows, do not use `winget`.
-- cmake 3.31.3 or later.
-
-### Build
-
-1. Clone the repository and open the solution file `EsunnyTap.sln` with Visual Studio 2022.
-2. run the command in `EsunnyTapApi/SwigGenerator.sh` to generate the cpp and C# wrapper code.
-3. run `win-build.sh` for windows native build or `linux-build.sh` for linux native build.
-4. Build the `EsunnyTap.Net` C# project.
-
-## FAQ
-
-### How to use GB2312 encoding?
-
-Add the following code before using the API
-
-```csharp
-SwigStringHelper.Register();
-```
-
-### The version of the EsunnyTap API?
-
-TapQuoteApiVersion:Version TapQuoteAPI V9.3.1.4, Date 2018.12.25
-TapTradeApiVersion:Version TapTradeAPI V9.0.3.16, Date 2020.08.08
-
-### dll doesn't copy to the output directory?
-
-set `RuntimeIdentifier` to `win-x64` in the project file.
+![img.png](img.png)
 
 ## License
 
