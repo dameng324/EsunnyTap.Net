@@ -24,7 +24,7 @@ TapTradeApiVersion:Version TapTradeAPI V9.0.3.16, Date 2020.08.08
 默认情况下编译后会拷贝到runtimes/目录下以适应不同的操作系统。如果你的程序只在特定的操作系统下运行，可以在项目csproj配置文件中配置特定的RuntimeIdentifier。
 - Windows: `<RuntimeIdentifier>win-x64</RuntimeIdentifier>`
 - Linux: `<RuntimeIdentifier>linux-x64</RuntimeIdentifier>`
-- 
+
 ### 存在中文乱码问题？
 
 在调用所有接口之前尝试使用此接口
