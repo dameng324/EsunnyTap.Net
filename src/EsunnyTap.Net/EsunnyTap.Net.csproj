@@ -28,6 +28,7 @@
             <PackagePath>build\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
         </Content>
         <Content Include="../EsunnyTapApi/include/*.h">
+            <Visible>false</Visible>
             <Pack>true</Pack>
             <PackagePath>include\%(FileName)%(Extension)</PackagePath>
         </Content>
