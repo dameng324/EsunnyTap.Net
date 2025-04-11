@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <ItemGroup>
+        <None Condition="'$(ShowEsunnyTapIncludeFile)'=='true'" Include="$(MSBuildThisFileDirectory)..\include\*.*" Link="include\EsunnyTap.Net\(FileName)%(Extension)"/>
+    </ItemGroup>
+</Project>

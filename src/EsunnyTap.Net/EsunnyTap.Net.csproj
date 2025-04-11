@@ -9,7 +9,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IsTrimmable>true</IsTrimmable>
         <IsAotCompatible >true</IsAotCompatible>
-        <Version>1.1.2-test9</Version>
+        <Version>1.1.2-test11</Version>
         <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
         <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
         <PackageProjectUrl>https://github.com/dameng324/EsunnyTap.Net</PackageProjectUrl>
@@ -23,6 +23,14 @@
             <PackagePath>runtimes\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
         </Content>
         <Content Remove="runtimes\**\*.lib"/>
+        <Content Include="build\**\*.*">
+            <Pack>true</Pack>
+            <PackagePath>build\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
+        </Content>
+        <Content Include="../EsunnyTapApi/include/*.h">
+            <Pack>true</Pack>
+            <PackagePath>include\%(FileName)%(Extension)</PackagePath>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Condition="$(TargetFramework)=='netstandard2.0'" Include="System.Text.Encoding.CodePages" Version="9.0.0"/>

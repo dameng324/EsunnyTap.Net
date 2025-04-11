@@ -8,9 +8,10 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <TargetFramework>net8.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ShowEsunnyTapIncludeFile>true</ShowEsunnyTapIncludeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EsunnyTap.Net" Version="1.1.2-test9" />
+    <PackageReference Include="EsunnyTap.Net" Version="1.1.2-test11" />
     <PackageReference Include="System.Reactive" Version="6.0.1" />
 <!--    <PackageReference Include="TUnit" Version="0.11.0" />    -->
   </ItemGroup>
