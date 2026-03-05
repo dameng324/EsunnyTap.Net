@@ -11,6 +11,7 @@ EsunnyTap.Net是易盛9.0内盘柜台接口的C#封装。它使用Swig技术将�
 - 编译时会自动将依赖的dll拷贝到输出目录
 - 支持Native AOT编译，避免代码被反编译
 - 同时支持Windows和Linux。Mac/IOS/Android由于易盛官方并未发布对应的native dll，所以无法支持
+- 提供了ErrorMap类来将错误码转换成错误信息，并且支持V10柜台接口的错误码转换
 
 ## 常见问题
 
