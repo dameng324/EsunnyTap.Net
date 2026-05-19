@@ -1,43 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFrameworks>net6.0;net8.0;net10.0;netstandard2.0;net45;net46;</TargetFrameworks>
-        <OutputType>Library</OutputType>
-        <Nullable>enable</Nullable>
-        <RepositoryType>git</RepositoryType>
-        <LangVersion>preview</LangVersion>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <IsTrimmable>true</IsTrimmable>
-        <IsAotCompatible >true</IsAotCompatible>
-        <Version>1.1.2-test12</Version>
-        <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
-        <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
-        <PackageProjectUrl>https://github.com/dameng324/EsunnyTap.Net</PackageProjectUrl>
-        <Title>EsunnyTap.Net</Title>
-        <Description>Esunny China Future Market and Trade Api Wrapper for .NET platform</Description>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0;netstandard2.0;net45;</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <Nullable>enable</Nullable>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>preview</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IsTrimmable>true</IsTrimmable>
+    <IsAotCompatible>true</IsAotCompatible>
+    <Version>1.1.2-test12</Version>
+    <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
+    <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dameng324/EsunnyTap.Net</PackageProjectUrl>
+    <Title>EsunnyTap.Net</Title>
+    <Description>Esunny China Future Market and Trade Api Wrapper for .NET platform</Description>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <Content Include="runtimes\**\*.*">
-            <Pack>true</Pack>
-            <PackagePath>runtimes\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
-        </Content>
-        <Content Remove="runtimes\**\*.lib"/>
-        <Content Include="build\**\*.*">
-            <Pack>true</Pack>
-            <PackagePath>build\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
-        </Content>
-        <Content Include="buildTransitive\**\*.*">
-            <Pack>true</Pack>
-            <PackagePath>buildTransitive\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
-        </Content>
-        <Content Include="../EsunnyTapApi/include/*.h">
-            <Visible>false</Visible>
-            <Pack>true</Pack>
-            <PackagePath>include\%(FileName)%(Extension)</PackagePath>
-        </Content>
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Condition="$(TargetFramework)=='netstandard2.0'" Include="System.Text.Encoding.CodePages" Version="9.0.0"/>
-    </ItemGroup>
+  <ItemGroup>
+    <Content Include="runtimes\**\*.*">
+      <Pack>true</Pack>
+      <PackagePath>runtimes\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
+    </Content>
+    <Content Remove="runtimes\**\*.lib" />
+    <Content Include="build\**\*.*">
+      <Pack>true</Pack>
+      <PackagePath>build\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
+    </Content>
+    <Content Include="buildTransitive\**\*.*">
+      <Pack>true</Pack>
+      <PackagePath>buildTransitive\%(RecursiveDir)%(FileName)%(Extension)</PackagePath>
+    </Content>
+    <Content Include="../EsunnyTapApi/include/*.h">
+      <Visible>false</Visible>
+      <Pack>true</Pack>
+      <PackagePath>include\%(FileName)%(Extension)</PackagePath>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Condition="$(TargetFramework)=='netstandard2.0'" Include="System.Text.Encoding.CodePages" Version="9.0.0" />
+  </ItemGroup>
 </Project>

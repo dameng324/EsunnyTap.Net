@@ -15,7 +15,8 @@ public static class SwigStringHelper
 
     [DllImport("EsunnyTapApi", EntryPoint = "SWIGRegisterStringCallback_EsunnyTapApi")]
     static extern void SWIGRegisterStringCallback_EsunnyTapApi(SwigStringDelegate stringDelegate);
-    [DllImport("EsunnyTapApi", EntryPoint="SWIG_csharp_string_size")]
+
+    [DllImport("EsunnyTapApi", EntryPoint = "SWIG_csharp_string_size")]
     private static extern int SWIG_csharp_string_size(global::System.IntPtr str);
     // ReSharper disable once InconsistentNaming
 #if NETFRAMEWORK

@@ -73,7 +73,9 @@ public class TradeTests
         {
             Console.WriteLine($"OnDisconnect reasonCode:{reasonCode}");
         }
-public Subject<int> OnApiReadySubject = new();
+
+        public Subject<int> OnApiReadySubject = new();
+
         public override void OnAPIReady()
         {
             Console.WriteLine("OnAPIReady");

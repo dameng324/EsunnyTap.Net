@@ -32,7 +32,7 @@ public class QuoteTests
             return;
         }
         Console.WriteLine($"SetAPINotify success");
-        
+
         ret = api.SetHostAddress("61.163.243.173", 7171);
         if (ret != 0)
         {
@@ -40,7 +40,7 @@ public class QuoteTests
             return;
         }
         Console.WriteLine($"SetHostAddress success");
-        
+
         ret = api.Login(
             new TapAPIQuoteLoginAuth()
             {

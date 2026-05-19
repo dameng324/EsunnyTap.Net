@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <LangVersion>preview</LangVersion>
@@ -11,8 +10,9 @@
     <ShowEsunnyTapIncludeFile>true</ShowEsunnyTapIncludeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EsunnyTap.Net" Version="1.1.2-test12" />
     <PackageReference Include="System.Reactive" Version="6.0.1" />
-<!--    <PackageReference Include="TUnit" Version="0.11.0" />    -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EsunnyTap.Net\EsunnyTap.Net.csproj" />
   </ItemGroup>
 </Project>
