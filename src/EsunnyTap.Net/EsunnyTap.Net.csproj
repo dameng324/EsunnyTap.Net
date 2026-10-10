@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net10.0;netstandard2.0;net45;</TargetFrameworks>
+    <TargetFrameworks>net8.0;net10.0;net45;netstandard2.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <Nullable>enable</Nullable>
     <RepositoryType>git</RepositoryType>
@@ -8,7 +8,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IsTrimmable>true</IsTrimmable>
-    <IsAotCompatible>true</IsAotCompatible>
+    <IsAotCompatible Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net10.0'">true</IsAotCompatible>
     <Version>1.1.2-test12</Version>
     <PackageTags>Future;Trade;CTP;China;Quant</PackageTags>
     <RepositoryUrl>https://github.com/dameng324/EsunnyTap.Net.git</RepositoryUrl>
