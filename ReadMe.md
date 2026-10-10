@@ -1,186 +1,110 @@
 # EsunnyTap.Net
 
 [![NuGet](https://img.shields.io/nuget/v/EsunnyTap.Net.svg)](https://www.nuget.org/packages/EsunnyTap.Net)
+[![CI](https://github.com/dameng324/EsunnyTap.Net/actions/workflows/ci.yml/badge.svg)](https://github.com/dameng324/EsunnyTap.Net/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-EsunnyTap.Net是易盛9.0内盘柜台接口的C#封装。它使用Swig技术将易盛的C++接口封装成C#接口。它支持易盛的行情和交易接口。
+易盛 TAP 9.0 内盘 API 的 .NET 封装，包含行情和交易接口。项目通过 SWIG 生成 C# 绑定，并随 NuGet 包提供对应平台的原生库。
 
-## 主要功能
+## 支持范围
 
-- 支持行情和交易接口
-- 支持.Net Framework 4.5和.Net Standard 2.0，以及.NET6和.NET8
-- 编译时会自动将依赖的dll拷贝到输出目录
-- 支持Native AOT编译，避免代码被反编译
-- 同时支持Windows和Linux。Mac/IOS/Android由于易盛官方并未发布对应的native dll，所以无法支持
-- 提供了ErrorMap类来将错误码转换成错误信息，并且支持V10柜台接口的错误码转换
+| 项目 | 支持范围 |
+|---|---|
+| .NET 目标框架 | .NET 8、.NET 10、.NET Framework 4.5、.NET Standard 2.0 |
+| 原生运行时 | Windows x64（win-x64）、Linux x64（linux-x64） |
+| API | 行情、交易 |
 
-## 常见问题
-
-### API版本号是多少?
-
-TapQuoteApiVersion:Version TapQuoteAPI V9.3.1.4, Date 2018.12.25
-TapTradeApiVersion:Version TapTradeAPI V9.0.3.16, Date 2020.08.08
-
-### Dll文件没有自动拷贝到输出目录
-
-默认情况下编译后会拷贝到runtimes/目录下以适应不同的操作系统。如果你的程序只在特定的操作系统下运行，可以在项目csproj配置文件中配置特定的RuntimeIdentifier。
-- Windows: `<RuntimeIdentifier>win-x64</RuntimeIdentifier>`
-- Linux: `<RuntimeIdentifier>linux-x64</RuntimeIdentifier>`
-
-### 存在中文乱码问题？
-
-在调用所有接口之前尝试使用此接口
-
-```csharp
-SwigStringHelper.Register();
-```
-
-### 其他问题？
-
-请提交github issue
+.NET 8 和 .NET 10 目标设置了 IsAotCompatible=true。发布应用时，RID 仍须与上表中的原生运行时匹配。
 
 ## 安装
 
-使用 dotnet 命令安装
-
-```bash
+~~~bash
 dotnet add package EsunnyTap.Net
-```
+~~~
 
-PackageReference
+## 快速开始
 
-```xml
-<PackageReference Include="EsunnyTap.Net" Version="1.1.7" />
-```
+创建交易 API 时需要易盛提供的授权信息。示例中的授权码是占位符，请替换为实际值。
 
-## 用法
-
-```csharp
+~~~csharp
 using System;
-using System.Threading.Tasks;
 using EsunnyTap.Net;
 
-Console.WriteLine($"TapQuoteApiVersion:{EsunnyTapApi.GetTapQuoteAPIVersion()}");
-Console.WriteLine($"TapTradeApiVersion:{EsunnyTapApi.GetTapTradeAPIVersion()}");
-
-int ret = 0;
-var api = EsunnyTapApi.CreateTapTradeAPI(
-    new TapAPIApplicationInfo() { AuthCode = "", KeyOperationLogPath = "" },
-    ref ret
-);
-if (ret != 0)
+var appInfo = new TapAPIApplicationInfo
 {
-    Console.WriteLine($"CreateTapTradeAPI failed ret:{ret}");
-    return;
+    AuthCode = "<vendor-issued-auth-code>",
+    KeyOperationLogPath = "./",
+};
+
+var result = 0;
+var api = EsunnyTapApi.CreateTapTradeAPI(appInfo, ref result);
+if (result != 0)
+{
+    throw new InvalidOperationException("CreateTapTradeAPI failed: " + result);
 }
 
-var tradeSpi = new TradeImpl();
-ret = api.SetAPINotify(tradeSpi);
-if (ret != 0)
-{
-    Console.WriteLine($"SetAPINotify failed ret:{ret}");
-    return;
-}
-ret = api.SetHostAddress("123.161.206.213", 6160);
-if (ret != 0)
-{
-    Console.WriteLine($"SetHostAddress failed ret:{ret}");
-    return;
-}
-ret = api.Login(
-    new TapAPITradeLoginAuth()
-    {
-        UserNo = "Q123456789",
-        Password = "123456",
-        AuthCode = "Demo_TestCollect",
-        AppID = "Demo_TestCollect",
-        ISDDA = EsunnyTapApi.APIYNFLAG_NO,
-        ISModifyPassword = EsunnyTapApi.APIYNFLAG_NO,
-        NoticeIgnoreFlag =
-            EsunnyTapApi.TAPI_NOTICE_IGNORE_CLOSE | EsunnyTapApi.TAPI_NOTICE_IGNORE_POSITIONPROFIT,
-    }
-);
-if (ret != 0)
-{
-    Console.WriteLine($"Login failed ret:{ret}");
-    return;
-}
-await Task.Delay(100000);
-public class TradeImpl : EsunnyTap.Net.ITapTradeAPINotify
-{
-    public override void OnConnect()
-    {
-        Console.WriteLine("OnConnect");
-    }
+// 注册 ITapTradeAPINotify 实现、设置前置地址，再按柜台要求登录。
+~~~
 
-    public override void OnRspLogin(int errorCode, TapAPITradeLoginRspInfo loginRspInfo)
-    {
-        Console.WriteLine($"OnRspLogin errorCode:{errorCode} loginRspInfo:{loginRspInfo}");
-    }
+行情接口可使用 EsunnyTapApi.CreateTapQuoteAPI 创建。若回调字符串出现中文乱码，可在调用接口前执行 SwigStringHelper.Register()。ErrorCodeMap.GetErrorMsg() 可将接口错误码转换为说明，映射包含 TAP 9 和 V10 错误码。
 
-    public override void OnDisconnect(int reasonCode)
-    {
-        Console.WriteLine($"OnDisconnect reasonCode:{reasonCode}");
-    }
+## API 版本
 
-    public override void OnAPIReady()
-    {
-        Console.WriteLine("OnAPIReady");
-    }
-}
+- 行情：TapQuoteAPI V9.3.1.4，2018-12-25
+- 交易：TapTradeAPI V9.0.3.16，2020-08-08
 
-```
+## 原生依赖
 
-## 打赏
+NuGet 包包含以下平台目录中的原生库：
 
-如果这个项目有帮助到你，请随意打赏
+- Windows x64：runtimes/win-x64/native
+- Linux x64：runtimes/linux-x64/native
 
-![img.png](img.png)
+发布应用时，将 RuntimeIdentifier 设置为 win-x64 或 linux-x64，以选择目标平台对应的原生依赖。
 
-## License
+## 构建
 
-MIT License
+### 环境与本地构建
 
-## Build
+- 使用 global.json 指定的 .NET SDK，并在仓库根目录执行 dotnet tool restore。
+- 使用 .swig-version 指定的 SWIG 版本。
+- 原生构建需要 CMake 和对应平台的 C++ 工具链。Windows 使用 Git Bash 和 Visual Studio C++ 工具；Linux 构建可在 Linux 或 WSL2 中运行。
 
-### Requirements
+SWIG 生成的 C# 和 C++ 文件不提交到 Git。每次本地构建前，进入 SWIG 项目重新生成：
 
-Use the .NET SDK pinned in `global.json` and restore the repository tools:
-
-```bash
-dotnet tool restore
-```
-
-SWIG must match the version in `.swig-version` (currently 4.5.1). CI runs SWIG generation on Ubuntu 24.04 and builds the Windows wrapper and NuGet package on windows-latest. Windows native builds use CMake 4.3 or later with Visual Studio 2026.
-
-### Regenerate SWIG bindings
-
-Generated C# and C++ files are not tracked in Git. CI regenerates them before compiling. Before each local solution build, regenerate the bindings from the pinned SWIG version:
-
-```bash
+~~~bash
 cd src/EsunnyTapApi
-dotnet tool restore
 bash ./SwigGenerate.sh
-cd ../..
-```
+~~~
 
-The script runs this repository's C# post-processing and formatting steps.
+在 Git Bash 中构建 Windows 原生库：
 
-### Build the solution
-
-```bash
-dotnet build EsunnyTap.Net.slnx --configuration Release
-```
-
-### Build native wrappers
-
-Build the Windows wrapper from Git Bash and the Linux wrapper from WSL2. Run these commands from `src/EsunnyTapApi`:
-
-```bash
+~~~bash
 bash ./win-build.sh
-bash ./linux-build.sh
-```
+~~~
 
+在 Linux 或 WSL2 中构建 Linux 原生库：
+
+~~~bash
+bash ./linux-build.sh
+~~~
+
+回到仓库根目录构建解决方案并检查格式：
+
+~~~bash
+cd ../..
+dotnet build EsunnyTap.Net.slnx --configuration Release
+dotnet tool run csharpier check .
+~~~
 
 ### GitHub Actions
 
-Pull requests and pushes to `main` run `.github/workflows/ci.yml`. It calls `.github/workflows/build.yml` to generate SWIG bindings on Linux, build the Windows wrapper, and pack the NuGet package; the `.nupkg` is uploaded as a 30-day workflow artifact. All workflow run steps use Bash, including Git Bash on Windows. `.github/workflows/publish.yml` calls the same build workflow, then publishes to NuGet for a `vX.Y.Z` tag or a manual run from `main` with a supplied version; tag publishing also creates a GitHub Release.
+向 main 提交 PR 或推送提交时，ci.yml 调用共享的 build.yml：Ubuntu job 生成 SWIG 绑定并构建 Linux 原生库，Windows job 构建 Windows 原生库、构建解决方案并打包 NuGet。CI 不会发布到 NuGet；生成的 nupkg 会作为保留 30 天的 workflow artifact。
+
+publish.yml 复用同一构建流程。推送 v 前缀版本 tag 会发布 NuGet 包并创建 GitHub Release；也可以在 main 上手动运行该 workflow，并填写不带 v 前缀的版本号。
+
+## 许可证
+
+[MIT License](LICENSE)
+
+问题与建议请提交到 [GitHub Issues](https://github.com/dameng324/EsunnyTap.Net/issues)。
