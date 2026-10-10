@@ -10,6 +10,8 @@ if [[ "$ACTUAL_SWIG_VERSION" != "$EXPECTED_SWIG_VERSION" ]]; then
     exit 1
 fi
 
+rm -rf ../EsunnyTap.Net/Swig/
+rm -f swig_wrap.cxx swig_wrap.h
 mkdir -p ../EsunnyTap.Net/Swig/
 swig -c++ -csharp -namespace EsunnyTap.Net -outdir ../EsunnyTap.Net/Swig/ swig.i
 dotnet StripSwigDerivedChecks.cs -- --no-backup \
